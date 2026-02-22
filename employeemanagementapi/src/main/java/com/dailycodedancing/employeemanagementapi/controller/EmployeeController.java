@@ -3,6 +3,7 @@ import com.dailycodedancing.employeemanagementapi.entity.Employee;
 import com.dailycodedancing.employeemanagementapi.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/employees")
@@ -28,5 +29,18 @@ public class EmployeeController {
     public String deleteEmployeeById(@PathVariable("id") long id) {
         employeeService.deleteEmployeeById(id);
         return "Employee with ID " + id + " has been deleted.";
+    }
+    @PostMapping
+    public Employee createEmployee(@RequestBody Employee employee) {
+        return employeeService.createEmployee(employee);
+    }
+    @GetMapping
+    public List<Employee> getAllEmployees(){
+        return employeeService.getAllEmployees();
+    }
+
+    @PutMapping("/{id}")
+    public Employee updateEmployee(@PathVariable long id, @RequestBody Employee employee) {
+        return employeeService.updateEmployee(id, employee);
     }
 }
