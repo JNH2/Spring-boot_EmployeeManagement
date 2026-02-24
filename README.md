@@ -6,7 +6,7 @@ PS：本项目使用 GitHub Codespaces 开发。这确保了一致的云原生�
 This project is a high-performance RESTful API built with Spring Boot 3.x. It implements comprehensive employee management logic and demonstrates the architectural evolution from in-memory storage to database persistence.
 🚩 Project Evolution Status / 项目演进状态:
     Phase 1: REST API with In-Memory ArrayList (Completed ✅)
-    Phase 2: JPA & H2 Database Integration (Current Focus 🚧)
+    Phase 2: JPA & H2 Database Integration (Already merged from branch to main🚧)
       Note: Database features are currently being developed in the H2JPAVersion branch.
       注：数据库功能目前正在 H2JPAVersion 分支中进行开发。
  
@@ -65,7 +65,13 @@ App 2 (Server): 本 Spring Boot 应用。处理业务逻辑并返回 Responses�
     git add .
     git commit -m "docs:"
     git push origin H2JPAVersion
+    Phase 1: RESTful API Development
     
+Data Persistence Note
+數據持久化筆記
+Currently, data is stored in memory. To enable file-based persistence, update the JDBC URL in application.properties to: jdbc:h2:file:./data/employee_db.
+目前數據存儲在內存中。若要啟用文件持久化，請將 application.properties 中的 JDBC URL 更新為：jdbc:h2:file:./data/employee_db。
+
 🚩 Future Roadmap (未来路线图)
    In-Memory ArrayList CRUD / 基于内存的增删改查截圖附件在根目錄（done，PostMan Testing in screnshot file under root）
    JPA & H2 Integration / 集成 H2 数据库与 JPA
