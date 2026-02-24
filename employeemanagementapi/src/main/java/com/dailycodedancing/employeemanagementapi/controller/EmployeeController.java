@@ -1,5 +1,5 @@
 package com.dailycodedancing.employeemanagementapi.controller;
-import com.dailycodedancing.employeemanagementapi.entity.Employee; 
+import com.dailycodedancing.employeemanagementapi.entity.EmployeeEntity; 
 import com.dailycodedancing.employeemanagementapi.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,16 +12,16 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @GetMapping("/{id}")
-    public Employee getEmployeeById(@PathVariable long id) {
+    public EmployeeEntity getEmployeeById(@PathVariable long id) {
         return employeeService.getEmployeeById(id);
     }
     @GetMapping("/firstName")
-    public Employee getEmployeeByFirstName(@RequestParam String firstName) {
+    public EmployeeEntity getEmployeeByFirstName(@RequestParam String firstName) {
         return employeeService.getEmployeeByFirstName(firstName);
     }
 
     @GetMapping("/lastName")
-    public Employee getEmployeeByLastName(@RequestParam String lastName) {
+    public EmployeeEntity getEmployeeByLastName(@RequestParam String lastName) {
         return employeeService.getEmployeeByLastName(lastName);
     }
 
@@ -31,16 +31,16 @@ public class EmployeeController {
         return "Employee with ID " + id + " has been deleted.";
     }
     @PostMapping
-    public Employee createEmployee(@RequestBody Employee employee) {
+    public EmployeeEntity createEmployee(@RequestBody EmployeeEntity employee) {
         return employeeService.createEmployee(employee);
     }
     @GetMapping
-    public List<Employee> getAllEmployees(){
+    public List<EmployeeEntity> getAllEmployees(){
         return employeeService.getAllEmployees();
     }
 
     @PutMapping("/{id}")
-    public Employee updateEmployee(@PathVariable long id, @RequestBody Employee employee) {
+    public EmployeeEntity updateEmployee(@PathVariable long id, @RequestBody EmployeeEntity employee) {
         return employeeService.updateEmployee(id, employee);
     }
 }

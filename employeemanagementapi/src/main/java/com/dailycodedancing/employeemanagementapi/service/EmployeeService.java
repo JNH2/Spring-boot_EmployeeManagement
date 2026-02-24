@@ -1,13 +1,13 @@
 package com.dailycodedancing.employeemanagementapi.service;
 import java.util.List;
 
-import com.dailycodedancing.employeemanagementapi.entity.Employee;
+import com.dailycodedancing.employeemanagementapi.entity.EmployeeEntity;
 public interface EmployeeService {
-    Employee getEmployeeByFirstName(String firstName);
-    Employee getEmployeeById(long id);
-    Employee getEmployeeByLastName(String lastName);
+    EmployeeEntity getEmployeeByFirstName(String firstName);
+    EmployeeEntity getEmployeeById(long id);
+    EmployeeEntity getEmployeeByLastName(String lastName);
     void deleteEmployeeById(long id);
-    Employee createEmployee(Employee employee);
-    List<Employee> getAllEmployees();
-    Employee updateEmployee(long id, Employee eployee);
+    EmployeeEntity createEmployee(EmployeeEntity employee);
+    List<EmployeeEntity> getAllEmployees();
+    EmployeeEntity updateEmployee(long id, EmployeeEntity employee);
 }
